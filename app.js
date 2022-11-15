@@ -1,12 +1,14 @@
 // import { createAccount } from "./modules/auth.js";
 const express = require("express");
 var cors = require("cors");
+const helmet = require("helmet");
 const app = express();
 const corsOptions = {
   origin: "*",
   optionSuccessStatus: 200,
 };
 app.use(cors(corsOptions));
+app.use(helmet());
 const port = 3000;
 const mysql = require("mysql");
 
@@ -25,7 +27,7 @@ connection.connect(function (err) {
   console.log("Connected to Database");
 });
 app.get("/", (req, res) => {
-  res.sendFile("static/index.html");
+  res.sendFile("index.html");
 });
 
 app.post("/createaccount", (req, res) => {
