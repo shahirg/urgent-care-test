@@ -27,7 +27,7 @@ connection.connect(function (err) {
   console.log("Connected to Database");
 });
 app.get("/", (req, res) => {
-  res.sendFile("index.html");
+  res.send("hello world");
 });
 
 app.post("/createaccount", (req, res) => {
