@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Admin Page</title>
+</head>
+
+<body>
+    <h1>Admin Page</h1>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <!-- Add Doctor -->
+    <!-- name gender dob email phone address speciality username password status -->
+    <button id="add-doctor-btn" type="button" class="btn btn-primary">Add Doctor Form</button>
+    <form id="add-doctor-form" style="display:none" action="/">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Name</span>
+            <input type="text" class="form-control" placeholder="Name" aria-label="Name"
+                aria-describedby="basic-addon1">
+        </div>
+        <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+            <option selected>Gender</option>
+            <option value="1">Male</option>
+            <option value="2">Female</option>
+            <option value="3">Other</option>
+        </select>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Email</span>
+            <input type="text" class="form-control" placeholder="Email" aria-label="Email"
+                aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Phone Number</span>
+            <input type="tel" class="form-control" placeholder="XXX-XXX-XXXX" aria-label="phone-number" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">speciality</span>
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+            
+                <option selected>speciality</option>
+                <option value="1">Cardiologist</option>
+                <option value="2">Urologist</option>
+                <option value="3">Neonatologist</option>
+                <option value="4">Neurologist</option>
+                <option value="5">Dermatologist</option>
+                <option value="6">Gynecologist</option>
+                <option value="7">General Practitioner</option>
+                <option value="8">ENT Specialist</option>
+            </select>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Username</span>
+            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Password</span>
+            <input type="password" class="form-control" placeholder="Password" aria-label="Password"
+                aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Status</span>
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+        
+                <option selected>Select Status</option>
+                <option value="1">Active</option>
+                <option value="2">Inactive</option>
+            
+            </select>
+        </div>
+    </form>
+    <!-- Add Lab Tech -->
+    <button id="labtech-btn" type="button" class="btn btn-primary">Add Lab Tech Form</button>
+
+
+    <!-- View Doctors List -->
+    <button id="view-doctors-btn" type="button" class="btn btn-primary">View All Doctors</button>
+    <div class="container" id="doctors-list">
+        <!--here data will come-->
+    </div>
+    <!-- View Lab Tech -->
+    <button id="view-lab-techs-btn" type="button" class="btn btn-primary">View All Lab Techs</button>
+    <div class="container" id="lab-techs-list">
+        <!--here data will come-->
+    </div>
+    <!-- Add Appointment -->
+    <button id="appointment-form-btn" type="button" class="btn btn-primary">Make Appointment</button>
+
+        <form id="appointment-form" style="display:none" action="/">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Name</span>
+                <input type="text" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="basic-addon1">
+            </div>
+            
+        </form>
+   
+    <script src="admin.js"></script>
+</body>
+
+</html>
