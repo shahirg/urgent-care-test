@@ -26,9 +26,17 @@ connection.connect(function (err) {
   }
   console.log("Connected to Database");
 });
-app.get("/", (req, res) => {
-  res.send("hello world");
+
+app.use(express.static("public"));
+
+// define the first route
+app.get("/", function (req, res) {
+  res.send("<h1>Hello World!</h1>");
 });
+// app.get("/", (req, res) => {
+//   console.log("index test");
+//   res.send("hello world");
+// });
 
 app.post("/createaccount", (req, res) => {
   let user = { email: req.body.email, password: req.body.password };
